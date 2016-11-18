@@ -1,0 +1,285 @@
+    1  cd .ss
+    2  mkdir /ssh
+    3  mkdir .ssh
+    4  cd .ssh/
+    5  l
+    6  ls
+    7  nano authorized_keys
+    8  ls
+    9  nano .ssh/authorized_keys 
+   10  l
+   11  ls
+   12  ..
+   13  l
+   14  cd
+   15  l
+   16  sudo su
+   17  su root
+   18  sudo su
+   19  su exploit 
+   20  l
+   21  sudo su
+   22  l
+   23  ls
+   24  cd .sshj
+   25  cd .ssh
+   26  l
+   27  ls
+   28  nano authorized_keys 
+   29  sudo su
+   30  nano .ssh/authorized_keys 
+   31  history
+   32  su - postgres
+   33  su - role0
+   34  su - postgres
+   35  sudo su postgres
+   36  gem pgasd
+   37  sudo su postgres -c psql 
+   38  sudo su postgres -c psqlasd 
+   39  sudo su postgres -c psql
+   40  echo "sudo su postgres -c psql" >> postgres.sh
+   41  chmod 777 postgres.sh 
+   42  ./postgres.sh 
+   43  ..
+   44  ll
+   45  rails delete twist0
+   46  ll
+   47  cd twist0/
+   48  rake db:drop
+   49  gem install execjs
+   50  rake db:drop
+   51  clear
+   52  bundle install
+   53  rake db:drop
+   54  sudo apt-get install nodejs
+   55  rake db:drop
+   56  ll
+   57  cd ..
+   58  ll
+   59  rm twist0/
+   60  rm -rf twist0/
+   61  git clone https://github.com/twistworld/twist_0.1.git
+   62  cd twist_0.1/
+   63  ll
+   64  rails new twist --database=postgresql
+   65  rake db:setup
+   66  bundle install
+   67  ll
+   68  cd twist/
+   69  rake db:setup
+   70  ..
+   71  ./postgres.sh 
+   72  cd twist_0.1/twist/
+   73  rake db:setup
+   74  ../.././postgres.sh 
+   75  sudo -u postgres psql
+   76  ne database.yml 
+   77  rake db:setup
+   78  git clone  https://github.com/rails/execjs
+   79  sudo apt-get install git
+   80  ll ~/.ssh/
+   81  cat ~/.ssh/authorized_keys 
+   82  ssh-keygen -rsa
+   83  ssh-keygen -t
+   84  ssh-keygen -t rsa
+   85  ll
+   86  cat ~/.ssh/id_rsa.pub 
+   87  sudo apt install git
+   88  git config --global user.email 7ryh4rd5qu4dz3r0@gmail.com
+   89  git clone https://github.com/twistworld/twist_0.1.git
+   90  ll
+   91  cd twist_0.1/
+   92  ll
+   93  cd ..
+   94  ne ~/.bashrc
+   95  ..
+   96  ne ~/.bashrc
+   97  $SHELL
+   98  cl
+   99  ll
+  100  cd config/
+  101  ll
+  102  ne database.yml 
+  103  emacs -nw ~/.bashrc
+  104  $SHELL
+  105  ./postgres.sh 
+  106  rake db:setup
+  107  rake db:setup --trace
+  108  ll
+  109  cd twist_0.1/
+  110  ll
+  111  cd twist/
+  112  ll
+  113  ne Rakefile
+  114  rake db:setup --trace
+  115  rails db:migrate
+  116  rails server -p 5000
+  117  rails generate model msg name:string description:string
+  118  rake db:migrate
+  119  generate controller Welcome index
+  120  ll
+  121  rails generate controller Welcome index
+  122  echo "rails server -p 5000" >> rs.sh
+  123  chmod 777 rs.sh 
+  124  ./rs.sh 
+  125  sh/postgres.sh 
+  126  asdasdasd
+  127  a
+  128  clear
+  129  ll
+  130  mkdir sh
+  131  mv *.sh sh/
+  132  ll
+  133  clear
+  134  ll
+  135  sh/postgres.sh 
+  136  clear
+  137  ll
+  138  cd twist_0.1/
+  139  ll
+  140  cd twist/
+  141  ll
+  142  clear
+  143  cl
+  144  ll
+  145  ne config/database.yml 
+  146  clear
+  147  ll
+  148  ne draft
+  149  cl
+  150  ll
+  151  cd
+  152  ll
+  153  ne .ssh/authorized_keys 
+  154  cd twist_0.1/
+  155  ll
+  156  cd twist/
+  157  ll
+  158  clear
+  159  ll
+  160  rails server -p 5000
+  161  rails server
+  162  rails server -p 80
+  163  rvmsudo rails server -p 80
+  164  rails server -p 80
+  165  clear
+  166  sudo rails server -p 80
+  167  sudo /home/exploit/.rvm/gems/ruby-2.3.0/bin/rails -p 80
+  168  /home/exploit/.rvm/gems/ruby-2.3.0/bin/rails -p 5000
+  169  rails server -p 5000
+  170  ll
+  171  echo "rails server -p $1" >> launch_rails_server.sh
+  172  chmod 777 launch_rails_server.sh 
+  173  ./launch_rails_server.sh 5000
+  174  ne launch_rails_server.sh 
+  175  ./launch_rails_server.sh 5000
+  176  ./launch_rails_server.sh
+  177  clear
+  178  ne launch_rails_server.sh
+  179  ./launch_rails_server.sh
+  180  cat launch_rails_server.sh
+  181  rvmsudo rails s --binding=0.0.0.0 -p 80
+  182  rvmsudo rails s --binding=0.0.0.0 -p 80 -d
+  183  top
+  184  top grep rails
+  185  top | grep rails
+  186  pid rails
+  187  pid -t
+  188  ps
+  189  ps aux
+  190  ps aux | grep rails
+  191  ps aux | grep server
+  192  Process.pid
+  193  pid
+  194  pid rails
+  195  pidof puma 
+  196  ps | grep puma
+  197  ps aux | grep puma
+  198  pid kill 1550
+  199  ps kill 1550
+  200  sudo kill 1550
+  201  ps aux | grep puma
+  202  echo "ps aux | grep puma"  >> stop_server.sh
+  203  echo "sudo kill rails" >> stop_server.sh 
+  204  ll
+  205  cat stop_server.sh 
+  206  clear
+  207  ./launch_rails_server.sh
+  208  ne launch_rails_server.sh
+  209  ./launch_rails_server.sh
+  210  cat stop_server.sh 
+  211  ps aux | grep public/
+  212  ps aux | grep puma
+  213  sudo kill 1744
+  214  rails server --binding=163.5.84.187
+  215  /home/exploit/twist_0.1/twist/tmp/pids/server.pid.
+  216  cat /home/exploit/twist_0.1/twist/tmp/pids/
+  217  cat /home/exploit/twist_0.1/twist/tmp/pids/server.pid 
+  218  sudo kill 1714
+  219  rails server --binding=163.5.84.187
+  220  rails server --binding=163.5.84.187:80
+  221  rails server --binding=163.5.84.187 -p80
+  222  clear
+  223  sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 3000
+  224  rails server -p
+  225  rails server
+  226  ne launch_rails_server.sh
+  227  rails server -p 3000
+  228  ./launch_rails_server.sh
+  229  iptables
+  230  sudo iptables
+  231  sudo iptables --help
+  232  sudo iptables -LS
+  233  sudo iptables -h
+  234  clear
+  235  iptables -t nat --line-numbers -n -L
+  236  sudo iptables -t nat --line-numbers -n -L
+  237  sudo iptables -t nat -D PREROOTING 1
+  238  sudo iptables -t nat -D REDIRECT 1
+  239  sudo iptables -t nat -D REDIRECT 
+  240  sudo iptables -t nat -D PREROUTING 1
+  241  sudo iptables -t nat --line-numbers -n -L
+  242  ./launch_rails_server.sh
+  243  cat launch_rails_server.sh
+  244  ps aux | grep puma
+  245  sudo kill 2043
+  246  rails s --binding=0.0.0.0 -p 80 -d
+  247  cat /home/exploit/twist_0.1/twist/tmp/pids/server.pid 
+  248  sudo kill 1934
+  249  rails s --binding=0.0.0.0 -p 80 -d
+  250  cat /home/exploit/twist_0.1/twist/tmp/pids/server.pid 
+  251  cat /home/exploit/twist_0.1/twist/tmp/pids/server.pid
+  252  ps aux | grep puma
+  253  rails s --binding=0.0.0.0 -p 80 -d
+  254  ps aux | grep puma
+  255  sudo rails s --binding=0.0.0.0 -p 80 -d
+  256  rvmsudo rails s --binding=0.0.0.0 -p 80 -d
+  257  cat /home/exploit/twist_0.1/twist/tmp/pids/server.pid
+  258  sudo kill 2137
+  259  ll
+  260  iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  261  sudo iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  262  sudo su iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  263  sudo su
+  264  sudo iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  265  history
+  266  sudo iptables
+  267  sudo iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  268  sudo iptables -t nat
+  269  sudo iptables -t nat -A PREROUTING -d <ip> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <ip>:8080
+  270  sudo iptables -t nat -A PREROUTING -d <127.0.0.1> -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination <127.0.0.1>:8080
+  271  sudo iptables -t nat -A PREROUTING -d 127.0.0.1 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 127.0.0.1:8080
+  272  clear
+  273  sudo iptables -t nat -A OUTPUT -d 127.0.0.1 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 127.0.0.1:8080
+  274  rails server -p 8080
+  275  sudo iptables -t nat -A PREROUTING -d 163.5.84.187 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 163.5.84.187:8080
+  276  sudo iptables -t nat -A OUTPUT -d 163.5.84.187 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 163.5.84.187:8080
+  277  service iptables restart
+  278  sudo service iptables restart
+  279  clear
+  280  /etc/init.d/clear
+  281  clear
+  282  sudo iptables -t nat -A PREROUTING -d 10.224.9.187 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 10.224.9.187:8080
+  283  sudo iptables -t nat -A OUTPUT -d 10.224.9.187 -p tcp --dport 80 -m addrtype --dst-type LOCAL -j DNAT --to-destination 10.224.9.187:8080
+  284  rails server -p 8080
+  285  history >> history.0
