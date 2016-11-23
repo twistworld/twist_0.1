@@ -4,8 +4,14 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users
+  resources :user_types
   resources :events
-  resources :artists
-  resources :music_style
+  resources :music_genres
+  resources :towns do
+    resources :neighborhood
+  end
+  resources :places
+  resources :guestlists
+  resources :levels
   root 'welcome#index'
 end

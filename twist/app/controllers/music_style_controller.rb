@@ -1,2 +1,0 @@
-class MusicStyleController < ApplicationController
-end
