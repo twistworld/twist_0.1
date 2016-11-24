@@ -1,0 +1,859 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE ar_internal_metadata OWNER TO gk;
+
+--
+-- Name: articles; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE articles (
+    id integer NOT NULL,
+    title character varying,
+    text text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE articles OWNER TO gk;
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE articles_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE articles_id_seq OWNER TO gk;
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE articles_id_seq OWNED BY articles.id;
+
+
+--
+-- Name: comments; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE comments (
+    id integer NOT NULL,
+    commenter character varying,
+    body text,
+    article_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE comments OWNER TO gk;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE comments_id_seq OWNER TO gk;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
+
+
+--
+-- Name: events; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE events (
+    id integer NOT NULL,
+    title character varying,
+    description text,
+    lineuptxt text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE events OWNER TO gk;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE events_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE events_id_seq OWNER TO gk;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE events_id_seq OWNED BY events.id;
+
+
+--
+-- Name: guestlists; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE guestlists (
+    id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE guestlists OWNER TO gk;
+
+--
+-- Name: guestlists_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE guestlists_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE guestlists_id_seq OWNER TO gk;
+
+--
+-- Name: guestlists_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE guestlists_id_seq OWNED BY guestlists.id;
+
+
+--
+-- Name: levels; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE levels (
+    id integer NOT NULL,
+    numero integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE levels OWNER TO gk;
+
+--
+-- Name: levels_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE levels_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE levels_id_seq OWNER TO gk;
+
+--
+-- Name: levels_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE levels_id_seq OWNED BY levels.id;
+
+
+--
+-- Name: msgs; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE msgs (
+    id integer NOT NULL,
+    name character varying,
+    description character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE msgs OWNER TO gk;
+
+--
+-- Name: msgs_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE msgs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE msgs_id_seq OWNER TO gk;
+
+--
+-- Name: msgs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE msgs_id_seq OWNED BY msgs.id;
+
+
+--
+-- Name: music_genres; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE music_genres (
+    id integer NOT NULL,
+    name character varying,
+    color character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE music_genres OWNER TO gk;
+
+--
+-- Name: music_genres_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE music_genres_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE music_genres_id_seq OWNER TO gk;
+
+--
+-- Name: music_genres_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE music_genres_id_seq OWNED BY music_genres.id;
+
+
+--
+-- Name: places; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE places (
+    id integer NOT NULL,
+    name character varying,
+    description text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE places OWNER TO gk;
+
+--
+-- Name: places_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE places_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE places_id_seq OWNER TO gk;
+
+--
+-- Name: places_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE places_id_seq OWNED BY places.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE schema_migrations OWNER TO gk;
+
+--
+-- Name: towns; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE towns (
+    id integer NOT NULL,
+    name character varying,
+    zone character varying,
+    neighborhood integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE towns OWNER TO gk;
+
+--
+-- Name: towns_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE towns_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE towns_id_seq OWNER TO gk;
+
+--
+-- Name: towns_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE towns_id_seq OWNED BY towns.id;
+
+
+--
+-- Name: user_types; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE user_types (
+    id integer NOT NULL,
+    "group" integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE user_types OWNER TO gk;
+
+--
+-- Name: user_types_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE user_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE user_types_id_seq OWNER TO gk;
+
+--
+-- Name: user_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE user_types_id_seq OWNED BY user_types.id;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE TABLE users (
+    id integer NOT NULL,
+    nameid character varying,
+    password character varying,
+    auth_token character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE users OWNER TO gk;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: gk
+--
+
+CREATE SEQUENCE users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE users_id_seq OWNER TO gk;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gk
+--
+
+ALTER SEQUENCE users_id_seq OWNED BY users.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY articles ALTER COLUMN id SET DEFAULT nextval('articles_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY events ALTER COLUMN id SET DEFAULT nextval('events_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY guestlists ALTER COLUMN id SET DEFAULT nextval('guestlists_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY levels ALTER COLUMN id SET DEFAULT nextval('levels_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY msgs ALTER COLUMN id SET DEFAULT nextval('msgs_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY music_genres ALTER COLUMN id SET DEFAULT nextval('music_genres_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY places ALTER COLUMN id SET DEFAULT nextval('places_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY towns ALTER COLUMN id SET DEFAULT nextval('towns_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY user_types ALTER COLUMN id SET DEFAULT nextval('user_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2016-11-11 14:50:05.393225	2016-11-11 14:50:05.393225
+\.
+
+
+--
+-- Data for Name: articles; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY articles (id, title, text, created_at, updated_at) FROM stdin;
+1	Test Article 1 	Premiere article de la base de donnees, realise en suivant le tutoriel ruby on rails. byby	2016-11-21 14:04:05.745161	2016-11-21 14:09:14.81472
+\.
+
+
+--
+-- Name: articles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('articles_id_seq', 4, true);
+
+
+--
+-- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY comments (id, commenter, body, article_id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('comments_id_seq', 2, true);
+
+
+--
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY events (id, title, description, lineuptxt, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('events_id_seq', 1, false);
+
+
+--
+-- Data for Name: guestlists; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY guestlists (id, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: guestlists_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('guestlists_id_seq', 1, false);
+
+
+--
+-- Data for Name: levels; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY levels (id, numero, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('levels_id_seq', 1, false);
+
+
+--
+-- Data for Name: msgs; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY msgs (id, name, description, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: msgs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('msgs_id_seq', 1, false);
+
+
+--
+-- Data for Name: music_genres; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY music_genres (id, name, color, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: music_genres_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('music_genres_id_seq', 1, false);
+
+
+--
+-- Data for Name: places; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY places (id, name, description, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: places_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('places_id_seq', 1, false);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY schema_migrations (version) FROM stdin;
+20161111161051
+20161121101932
+20161121162655
+20161122172605
+20161122172647
+20161122172718
+20161122172857
+20161122173115
+20161122173143
+20161122173200
+20161122173425
+20161123171654
+20161123174004
+20161123181847
+\.
+
+
+--
+-- Data for Name: towns; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY towns (id, name, zone, neighborhood, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: towns_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('towns_id_seq', 1, false);
+
+
+--
+-- Data for Name: user_types; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY user_types (id, "group", created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: user_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('user_types_id_seq', 1, false);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: gk
+--
+
+COPY users (id, nameid, password, auth_token, created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gk
+--
+
+SELECT pg_catalog.setval('users_id_seq', 1, false);
+
+
+--
+-- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: articles_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY articles
+    ADD CONSTRAINT articles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY events
+    ADD CONSTRAINT events_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: guestlists_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY guestlists
+    ADD CONSTRAINT guestlists_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: levels_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY levels
+    ADD CONSTRAINT levels_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: msgs_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY msgs
+    ADD CONSTRAINT msgs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: music_genres_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY music_genres
+    ADD CONSTRAINT music_genres_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: places_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY places
+    ADD CONSTRAINT places_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: towns_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY towns
+    ADD CONSTRAINT towns_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: user_types_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY user_types
+    ADD CONSTRAINT user_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: gk; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_comments_on_article_id; Type: INDEX; Schema: public; Owner: gk; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_article_id ON comments USING btree (article_id);
+
+
+--
+-- Name: fk_rails_3bf61a60d3; Type: FK CONSTRAINT; Schema: public; Owner: gk
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT fk_rails_3bf61a60d3 FOREIGN KEY (article_id) REFERENCES articles(id);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

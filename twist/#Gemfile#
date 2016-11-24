@@ -49,3 +49,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Provide token for auth
 gem 'has_secure_token'
+#device autologin

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121162655) do
+ActiveRecord::Schema.define(version: 20161123181847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(version: 20161121162655) do
     t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "lineuptxt"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "guestlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.integer  "numero"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "msgs", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -38,11 +57,40 @@ ActiveRecord::Schema.define(version: 20161121162655) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "twist_users", id: :integer, force: :cascade do |t|
-    t.text    "name",    null: false
-    t.integer "age",     null: false
-    t.text    "address", null: false
-    t.integer "genre",   null: false
+  create_table "music_genres", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "towns", force: :cascade do |t|
+    t.string   "name"
+    t.string   "zone"
+    t.integer  "neighborhood"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "user_types", force: :cascade do |t|
+    t.integer  "group"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "nameid"
+    t.string   "password"
+    t.string   "auth_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "comments", "articles"
