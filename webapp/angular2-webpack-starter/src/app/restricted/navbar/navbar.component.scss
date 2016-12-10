@@ -1,0 +1,65 @@
+@import "../../styles/variables";
+@import "../../styles/fonts";
+
+@mixin va ($pos: relative, $top: 50%) {
+	position: $pos;
+	top: $top;
+	transform: translateY(-50%);
+}
+
+
+md-toolbar {
+    background-color: $navbar-background;
+    color: $navbar-color;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700px;
+    @include va;
+    transform: translate3d(0, 0, 0);
+
+    div {
+        margin: 0 10px;
+    }
+
+    .space {
+        flex : 1 1 auto;
+    }
+
+    .username {
+        order: 2;            
+    }
+    
+    .icon {
+        width: 40px;
+        height: 40px;
+        background: #ccc;
+        border-radius: 50%;
+        order: 3;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+        text-decoration: none;
+        color: $navbar-color;
+    }
+
+    a:after {
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        height: 3px;
+        bottom: 10px;
+        content: "";
+        background-color: darken($navbar-background,15%);
+        transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform: translate3d(0, 0, 0);
+    }
+
+    a:hover:after {
+        left: 20px;
+        right: 22px;
+    }
+}
